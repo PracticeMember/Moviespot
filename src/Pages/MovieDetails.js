@@ -19,7 +19,7 @@ export const MovieDetails = () => {
       setMovie(data)
     }
     fetchData();
-  }, []);
+  }, [params.id]);
 
   useEffect(() => {
     document.title = movie.title ? movie.title : "Movie"

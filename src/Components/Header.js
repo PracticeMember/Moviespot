@@ -5,7 +5,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 export const Header = () => {
   const [hidden, setHidden] = useState(true);
   const [search, setSearch] = useState(true);
-  const [darkMode, setDarkmode] = useState(false);
+  const [darkMode, setDarkmode] = useState(JSON.parse(localStorage.getItem('darkMode')) || false);
   const navigate = useNavigate();
 
   const ActiveClass = `block py-2 px-3 rounded md:hover:bg-transparent  text-blue-700 md:p-0 dark:text-cyan-300   md:dark:hover:bg-transparent dark:border-gray-700`
@@ -15,6 +15,8 @@ export const Header = () => {
       document.documentElement.classList = "dark"
     else
       document.documentElement.classList = ""
+
+    localStorage.setItem('darkMode', JSON.stringify(darkMode))
   }, [darkMode])
 
   const handleSubmit = (event) => {
