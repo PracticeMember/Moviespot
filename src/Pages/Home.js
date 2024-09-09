@@ -28,7 +28,7 @@ export const Home = ({ apiPath, title }) => {
 
     };
     fetchGenres();
-  },[])
+  }, [])
 
   useEffect(() => {
     document.title = title
@@ -36,7 +36,7 @@ export const Home = ({ apiPath, title }) => {
 
   return (
     <section >
-      {allgenres.length === 0 ? (<p>no items</p>) :
+      {allgenres.length === 0 ? ("") :
         (<div className='scroll-container w-[85%] relative mx-auto rounded-sm'>
           <div className='font-medium flex overflow-x-auto whitespace-nowrap rounded-lg dark:text-white text-gray-600 py-4  px-2 scroll-content'>
             {allgenres.map(genre => (
